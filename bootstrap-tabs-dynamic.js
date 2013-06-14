@@ -1,4 +1,4 @@
-$.fn.addTab = function(id, title, content){
+$.fn.addBTTab = function(id, title, content){
   ele_with_id = $("#" + id)
   if (ele_with_id.length > 0){
     throw "An element with that ID already exist: '" + id + "'."
@@ -54,7 +54,7 @@ $.fn.addTab = function(id, title, content){
   }
 }
 
-$.fn.getTabByID = function(id){
+$.fn.getBTTabByID = function(id){
   a = $("a[href=#" + id + "]")
   if (a.length <= 0){
     throw "Could not find a tab with that ID: '" + id + "'."  
@@ -65,7 +65,7 @@ $.fn.getTabByID = function(id){
   return li
 }
 
-$.fn.renameTab = function(title){
+$.fn.renameBTTab = function(title){
   a = $("a", this)
   if (a.length <= 0){
     throw "No a element. Was that really a tab?"  
@@ -74,7 +74,7 @@ $.fn.renameTab = function(title){
   a.text(title)
 }
 
-$.fn.removeTab = function(){
+$.fn.removeBTTab = function(){
   a = $("a", this)
   if (a.length <= 0){
     throw "No a-element could be found. Was that really a tab?"  
@@ -93,7 +93,7 @@ $.fn.removeTab = function(){
   $(this).remove()
 }
 
-$.fn.currentTab = function(){
+$.fn.currentBTTab = function(){
   pane = $(this).parents(".tab-pane")
   if (pane.length <= 0){
     throw "No parent tab was found. Are you sure there is one?"
@@ -110,6 +110,6 @@ $.fn.currentTab = function(){
   return a.parent()
 }
 
-$.fn.currentTabID = function(){
+$.fn.currentBTTabID = function(){
   return $(this).currentTab().find("a").attr("href").substring(1, 999)
 }
