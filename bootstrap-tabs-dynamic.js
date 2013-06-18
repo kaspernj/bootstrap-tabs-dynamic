@@ -110,6 +110,16 @@ $.fn.currentBTTab = function(){
   return a.parent()
 }
 
+$.fn.currentBTTabContent = function(){
+  pane = $(this).parents(".tab-pane")
+  if (pane.length <= 0){
+    throw "No parent tab was found. Are you sure there is one?"
+  }
+  pane = $(pane[0])
+  
+  return pane
+}
+
 $.fn.currentBTTabID = function(){
   return $(this).currentTab().find("a").attr("href").substring(1, 999)
 }
