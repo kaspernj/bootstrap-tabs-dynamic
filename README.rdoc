@@ -9,30 +9,30 @@ Require the single JavaScript file.
 == Adding a new tab
 
   tabs = $("ul.nav-tabs")
-  tabs.addBTTab("id_of_tab", "Tab title", "<b>Content</b>")
+  tabs.addBSTab("id_of_tab", "Tab title", "<b>Content</b>")
 
 You can also add it by an element already defined (maybe as hidden?):
 
-  tabs.addBTTab("id_of_tab", "Tab title", $("#my_element_id"))
+  tabs.addBSTab("id_of_tab", "Tab title", $("#my_element_id"))
 
 == Removing a tab
   
-  tab = tabs.getBTTabByID("id_of_tab")
-  tab.removeBTTab()
+  tab = tabs.getBSTabByID("id_of_tab")
+  tab.removeBSTab()
 
 == Renaming a tab
 
-  tab = tabs.getBTTabById("id_of_tab")
-  tab.renameBTTab("New title")
+  tab = tabs.getBSTabByID("id_of_tab")
+  tab.renameBSTab("New title")
 
 == Getting the tab from a subelement within the tab.
 
   a.click(function(){
-    tab = $(this).currentBTTab()
+    tab = $(this).currentBSTab()
   })
 
 == Getting the tab ID from a subelement within the tab.
 
   a.click(function(){
-    tab_id = $(this).currentBTTabID()
+    tab_id = $(this).currentBSTabID()
   })
