@@ -101,13 +101,22 @@ $.fn.currentBSTab = function(){
   pane = $(pane[0])
   
   id = pane.attr("id")
-  a = $("a[href=#" + id + "]")
-  
-  if (!a){
-    throw "The link from the pane could not be found. Did you make an invalid structure?"
+  if (!id){
+    throw "The pane found did not have an ID: '" + pane.html() + "'."
   }
   
-  return a.parent()
+  a = $("a[href=#" + id + "]")
+  
+  if (a.length <= 0){
+    throw "The link from the pane could not be found. Did you make an invalid structure? The ID should have been: '" + id + "'."
+  }
+  
+  li = a.parent()
+  if (li.length <= 0){
+    throw "The link-element did not have a parent: " + a.html()
+  }
+  
+  return li
 }
 
 $.fn.currentBSTabContent = function(){
@@ -121,5 +130,5 @@ $.fn.currentBSTabContent = function(){
 }
 
 $.fn.currentBSTabID = function(){
-  return $(this).currentTab().find("a").attr("href").substring(1, 999)
+  return $(this).currentBSTab().find("a").attr("href").substring(1, 999)
 }
