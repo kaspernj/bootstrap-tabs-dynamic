@@ -2,7 +2,11 @@
 
 A framework for adding, remove, renaming and in general handling Twitter Bootstrap Tabs through JavaScript.
 
-= Usage and examples
+= Examples
+
+@nick322 has set up this exelent JS Fiddle: http://jsfiddle.net/0ua2gzyc/
+
+= Usage
 
 Require the single JavaScript file.
 
